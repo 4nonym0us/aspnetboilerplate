@@ -72,7 +72,7 @@ namespace Abp.AutoMapper
         private void CreateOtherMappings(IConfiguration cfg)
         {
             var localizationManager = IocManager.Resolve<ILocalizationManager>();
-            cfg.CreateMap<LocalizableString, string>().ConvertUsing(ls => localizationManager.GetString(ls));
+            cfg.CreateMap<LocalizableString, string>("AbpAutoMapperModuleProfile").ConvertUsing(ls => localizationManager.GetString(ls));
         }
     }
 }
